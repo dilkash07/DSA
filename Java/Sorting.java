@@ -47,21 +47,51 @@ public class Sorting {
   // printArray(arr);
   // }
 
-  // insertion sort
+  // // insertion sort
+  // public static void main(String[] args) {
+  // int arr[] = { 7, 4, 6, 8, 0, 2 };
+
+  // for (int i = 1; i < arr.length; i++) {
+  // int current = arr[i];
+  // int j = i - 1;
+
+  // while (j >= 0 && arr[j] > current) {
+  // // keep swapping
+  // arr[j + 1] = arr[j];
+  // j--;
+  // }
+
+  // arr[j + 1] = current;
+  // }
+
+  // printArray(arr);
+  // }
+
+  // counting sort
   public static void main(String[] args) {
     int arr[] = { 7, 4, 6, 8, 0, 2 };
 
-    for (int i = 1; i < arr.length; i++) {
-      int current = arr[i];
-      int j = i - 1;
+    int largest = Integer.MIN_VALUE;
 
-      while (j >= 0 && arr[j] > current) {
-        // keep swapping
-        arr[j + 1] = arr[j];
-        j--;
+    for (int i = 0; i < arr.length; i++) {
+      largest = Math.max(largest, arr[i]);
+
+    }
+
+    int count[] = new int[largest + 1];
+    for (int i = 0; i < arr.length; i++) {
+      count[arr[i]]++;
+    }
+
+    // sorting
+    int j = 0;
+    for (int i = 0; i < count.length; i++) {
+      while (count[i] > 0) {
+        arr[j] = i;
+        j++;
+        count[i]--;
+
       }
-
-      arr[j + 1] = current;
     }
 
     printArray(arr);
