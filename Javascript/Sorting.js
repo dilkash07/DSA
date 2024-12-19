@@ -9,7 +9,7 @@ for (let i = 0; i < arr.length - 1; i++) {
   }
 }
 
-console.log("bubble sort array: ", arr);
+// console.log("bubble sort array: ", arr);
 
 // selection sorting
 for (let i = 0; i < arr.length - 1; i++) {
@@ -23,7 +23,7 @@ for (let i = 0; i < arr.length - 1; i++) {
   [arr[smallest], arr[i]] = [arr[i], arr[smallest]];
 }
 
-console.log("selection sort array: ", arr);
+// console.log("selection sort array: ", arr);
 
 // insertion sorting
 for (let i = 0; i < arr.length; i++) {
@@ -37,4 +37,4 @@ for (let i = 0; i < arr.length; i++) {
   arr[j + 1] = current;
 }
 
-console.log("insertion sort array: ", arr);
+// console.log("insertion sort array: ", arr);

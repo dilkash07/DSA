@@ -1,4 +1,4 @@
-// write a funtionality for insert an element from an array
+// Q.1 write a funtion insert an element from an array
 const arr = [56, 46, 98, 73, 2, 0, 876, 45];
 
 const insertElement = (arr, element, position) => {
@@ -16,7 +16,7 @@ const insertElement = (arr, element, position) => {
 // const el = insertElement(arr, 44, 5);
 // console.log(el);
 
-// write a functionality for remove an element from an array
+// Q.2 write a function remove an element from an array
 function removeElement(arr, position) {
   for (let i = position; i < arr.length - 1; i++) {
     arr[i] = arr[i + 1];
@@ -29,7 +29,7 @@ function removeElement(arr, position) {
 // const el = removeElement(arr, 4);
 // console.log("after", el);
 
-// writte a functionality for search an element from an array
+// Q.3 writte a function search an element from an array
 function searchElement(arr, element) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == element) {
@@ -41,7 +41,7 @@ function searchElement(arr, element) {
 
 // console.log(searchElement(arr, 73));
 
-// write a functionality for merge two array manually
+// Q.4 write a function merge two array manually
 const arr1 = [43, 65, 877, 7, 0, 91, 32, 46, 76];
 
 function mergeArray(arr, arr1) {
@@ -59,7 +59,7 @@ function mergeArray(arr, arr1) {
 
 // console.log(mergeArray(arr, arr1));
 
-// write a functionality for merge two array manually using while loop
+// Q.5 write a function merge two array manually using while loop
 const data = [5, 45, 56, 76, 87, 89, 98, 100, 103, 108, 110];
 const data1 = [2, 3, 48, 62, 88, 99, 113, 121];
 
@@ -95,4 +95,96 @@ function mergeArray(data, data1) {
   return newData;
 }
 
-console.log(mergeArray(data, data1));
+// console.log(mergeArray(data, data1));
+
+// Q.6 write a function sort an array using bubble sort
+// function getSortedArray(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         const temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(getSortedArray(arr));
+
+// Q.7 write a function for sorted an array using selection sort
+function getSortedArray(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let smallest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[smallest]) {
+        smallest = j;
+      }
+    }
+    const temp = arr[i];
+    arr[i] = arr[smallest];
+    arr[smallest] = temp;
+
+    // [arr[smallest], arr[i]] = [arr[i], arr[smallest]];
+  }
+  return arr;
+}
+
+// console.log(getSortedArray(arr));
+
+// Q.8 write a function sorted an array using insertion sort
+function getSortedArray(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let current = arr[i];
+    let j = i - 1;
+
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    arr[j + 1] = current;
+  }
+  return arr;
+}
+
+// console.log(getSortedArray(arr));
+
+// Q.9 write a function sorted an array using count sort
+function getSortedArray(arr) {
+  return arr;
+}
+
+// console.log(getSortedArray(arr));
+
+// Q.10 write a function reverse an array using while loop
+function getReverseArray(arr) {
+  let start = 0;
+  let end = arr.length - 1;
+
+  while (start < end) {
+    let temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+
+    start++;
+    end--;
+  }
+  return arr;
+}
+
+// console.log(getReverseArray(arr));
+
+// Q.11 write a function reverse an array using for loop
+function getReverseArray(arr) {
+  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+    const temp = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = temp;
+  }
+
+  return arr;
+}
+
+// console.log(getReverseArray(arr));
