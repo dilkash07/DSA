@@ -1,5 +1,18 @@
 const arr = [56, 46, 98, 73, 2, 0, 876, 45];
 
+// reverse recursion
+let money = 100;
+
+function buyMore(m) {
+  buy(m);
+}
+
+function buy(m) {
+  if (m > 0) {
+    buyMore(m - 10);
+  }
+}
+
 // Q.1 write a function calculate factorial of n numbers
 function factorial(n) {
   if (n === 0 || n === 1) {
