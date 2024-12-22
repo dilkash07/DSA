@@ -135,15 +135,14 @@ function getSortedArray(arr) {
 
 // Q.8 write a function sorted an array using insertion sort
 function getSortedArray(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    let current = arr[i];
+  for (let i = 1; i < arr.length; i++) {
+    const current = arr[i];
     let j = i - 1;
 
     while (j >= 0 && arr[j] > current) {
       arr[j + 1] = arr[j];
       j--;
     }
-
     arr[j + 1] = current;
   }
   return arr;
@@ -152,9 +151,9 @@ function getSortedArray(arr) {
 // console.log(getSortedArray(arr));
 
 // Q.9 write a function sorted an array using count sort
-function getSortedArray(arr) {
-  return arr;
-}
+// function getSortedArray(arr) {
+//   return arr;
+// }
 
 // console.log(getSortedArray(arr));
 
